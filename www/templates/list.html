@@ -1,0 +1,11 @@
+<h2>List</h2>
+
+<div id="aside">
+    <div ui-view></div>
+</div>
+
+<div id="main">
+    <ul>
+        <li ng-repeat="recipe in recipes"><a ui-sref="list.recipe({ recipe: recipe.nid})">{{recipe.title}}</a></li>
+    </ul>
+</div>
