@@ -1,3 +1,5 @@
 # robotstxt.org/
 
+# For now, block everything
 User-agent: *
+Disallow: /
