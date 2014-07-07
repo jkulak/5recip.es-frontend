@@ -7,5 +7,5 @@ angular
         console.log('Recipe is coming');
         console.log(recipe);
 
-        // $scope.testing = "elo";
+        $scope.htmlReady();
     }])

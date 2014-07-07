@@ -1,3 +1,5 @@
+angular.module('recipeApp', ['ng', 'seo']);
+
 /**
 * recipeApp Module
 *
@@ -9,15 +11,16 @@ angular.module('recipeApp', [
     .config(['$urlRouterProvider', '$stateProvider' , function($urlRouterProvider, $stateProvider) {
 
         $urlRouterProvider.otherwise('/');
-        // $locationProvider.html5Mode(true);
-        // $locationProvider.hashPrefix('#!');
 
         $stateProvider
             .state('home', {
                 url: '/',
-                templateUrl: 'templates/home.html',
-                controller: 'homeCtrl'
-                // template: 'home'
+                views: {
+                    'main': {
+                        templateUrl: 'templates/home.html',
+                        controller: 'homeCtrl',
+                    }
+                }
             })
             .state('list', {
                 url: '/list',
@@ -66,13 +69,19 @@ angular.module('recipeApp', [
             })
             .state('best', {
                 url: '/best',
-                templateUrl: 'templates/best.html'
-                // template: 'home'
+                views: {
+                    'main': {
+                        templateUrl: 'templates/best.html'        
+                    }
+                }
             })
             .state('about', {
                 url: '/about',
-                templateUrl: 'templates/about.html',
-                controller: 'homeCtrl'
-                // template: 'home'
+                views: {
+                    'main': {
+                        templateUrl: 'templates/about.html',
+                        controller: 'homeCtrl'
+                    }
+                }
             })
     }])
