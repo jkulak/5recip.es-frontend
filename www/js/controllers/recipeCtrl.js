@@ -4,5 +4,8 @@ angular
         $scope.title = "Recipe view";
         $scope.recipe = recipe;
 
-        $scope.testing = "elo";
+        console.log('Recipe is coming');
+        console.log(recipe);
+
+        // $scope.testing = "elo";
     }])

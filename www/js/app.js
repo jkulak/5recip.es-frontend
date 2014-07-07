@@ -26,7 +26,7 @@ angular.module('recipeApp', [
                         controller: 'listCtrl',
                         resolve: {
                             recipes: ['$http', function($http) {
-                                return $http.get('http://drupal-recipes.griller/node.json').then(function(response) {
+                                return $http.get('http://recipes-backend.griller/node.json').then(function(response) {
                                     return response.data.list;
                                 })
                             }]
@@ -42,17 +42,8 @@ angular.module('recipeApp', [
                         controller: 'recipeCtrl',
                         resolve: {
                             recipe: ['$http', '$stateParams', function($http, $stateParams) {
-                                return $http.get('http://drupal-recipes.griller/node/' + $stateParams.recipe + '.json').then(function(response) {
-                                
-                                    // ???
-                                    // Wait to load first resource, and then request second resource - how?
-
-                                    return $http.get('http://drupal-recipes.griller/file/' + response.data.field_main_picture.file.id + '.json').then(function(response) {
-                                        response.data.image = response;
-                                        console.log('Recipe');
-                                        console.log(response.data);
-                                        return response.data;
-                                    });
+                                return $http.get('http://recipes-backend.griller/node/' + $stateParams.recipe + '.json').then(function(response) {
+                                    return response.data;
                                     
                                 })
                             }]
@@ -63,7 +54,7 @@ angular.module('recipeApp', [
                         controller: 'listCtrl',
                         resolve: {
                             recipes: ['$http', function($http) {
-                                return $http.get('http://drupal-recipes.griller/node.json').then(function(response) {
+                                return $http.get('http://recipes-backend.griller/node.json').then(function(response) {
                                     return response.data.list;
                                 })
                             }]
