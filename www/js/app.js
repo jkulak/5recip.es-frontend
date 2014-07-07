@@ -10,7 +10,7 @@ angular.module('recipeApp', [
 
         $urlRouterProvider.otherwise('/');
         // $locationProvider.html5Mode(true);
-        // $locationProvider.hashPrefix('!');
+        // $locationProvider.hashPrefix('#!');
 
         $stateProvider
             .state('home', {
