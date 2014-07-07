@@ -7,6 +7,7 @@ angular.module('recipeApp', [
     'ui.router'
     ])
     .config(['$urlRouterProvider', '$stateProvider' , function($urlRouterProvider, $stateProvider) {
+
         $urlRouterProvider.otherwise('/');
         // $locationProvider.html5Mode(true);
         // $locationProvider.hashPrefix('!');
@@ -26,7 +27,7 @@ angular.module('recipeApp', [
                         controller: 'listCtrl',
                         resolve: {
                             recipes: ['$http', function($http) {
-                                return $http.get('http://recipes-backend.griller/node.json').then(function(response) {
+                                return $http.get(WEBASCRAZY_CONFIG.apiUrl + '/node.json').then(function(response) {
                                     return response.data.list;
                                 })
                             }]
@@ -42,7 +43,8 @@ angular.module('recipeApp', [
                         controller: 'recipeCtrl',
                         resolve: {
                             recipe: ['$http', '$stateParams', function($http, $stateParams) {
-                                return $http.get('http://recipes-backend.griller/node/' + $stateParams.recipe + '.json').then(function(response) {
+                                return $http.get(WEBASCRAZY_CONFIG.apiUrl + '/node/' + $stateParams.recipe + '.json').then(function(response) {
+            
                                     return response.data;
                                     
                                 })
@@ -54,7 +56,7 @@ angular.module('recipeApp', [
                         controller: 'listCtrl',
                         resolve: {
                             recipes: ['$http', function($http) {
-                                return $http.get('http://recipes-backend.griller/node.json').then(function(response) {
+                                return $http.get(WEBASCRAZY_CONFIG.apiUrl + '/node.json').then(function(response) {
                                     return response.data.list;
                                 })
                             }]
