@@ -1,16 +1,16 @@
-angular.module('recipeApp', ['ng', 'seo']);
-
 /**
 * recipeApp Module
 *
 * Description
 */
 angular.module('recipeApp', [
-    'ui.router'
+    'ui.router',
+    'Analytic.module',
     ])
     .config(['$urlRouterProvider', '$stateProvider' , function($urlRouterProvider, $stateProvider) {
 
         $urlRouterProvider.otherwise('/');
+        // $locationProvider.html5Mode(true).hashPrefix('!');
 
         $stateProvider
             .state('home', {

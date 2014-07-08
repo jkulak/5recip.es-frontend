@@ -6,6 +6,4 @@ angular
 
         console.log('Recipe is coming');
         console.log(recipe);
-
-        $scope.htmlReady();
     }])
