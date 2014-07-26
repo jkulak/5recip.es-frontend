@@ -51,7 +51,7 @@
 
 	<target name="move">
 		<tstamp>
-  		<format property="RELEASE_ID" pattern="yyyymmmmdd-HHmmsssss" locale="en,UK"/>
+  		<format property="RELEASE_ID" pattern="yyyymmdd-HHmmsssss" locale="en,UK"/>
 		</tstamp>
 
 		<move todir="/var/www/5recip.es/www/releases/${RELEASE_ID}">
