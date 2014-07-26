@@ -56,7 +56,7 @@
 
 		<copy todir="/var/www/5recip.es/www/releases/${RELEASE_ID}">
   		<fileset dir="."/>
-		</move>
+		</copy>
 
 		<echo message="Deleting symlink" />
 		<symlink action="delete" link="/var/www/5recip.es/www/www" />
