@@ -50,64 +50,7 @@
 	<!-- props -->
 	<property environment="env" />
 	<property name="build.dir" value="build" />
-	<property name="lib.dir" value="${basedir}/lib" />
-	<property name="final_js" value="${basedir}/../public/asset/poebao-${DSTAMP}.js" />
-	<property name="final_css" value="${basedir}/../public/asset/poebao-${DSTAMP}.css" />
-
-	<!-- libraries -->
-	<property name="yui-compressor" location="${lib.dir}/yuicompressor-2.4.2.jar" />
-	<property name="yui-compressor-ant-task" location="${lib.dir}/yui-compressor-ant-task-0.5.jar" />
-
-	<!-- classpath -->
-	<path id="yui.classpath">
-		<pathelement location="${yui-compressor}" />
-		<pathelement location="${yui-compressor-ant-task}" />
-	</path>
-
-	<!-- task definitions -->
-	<taskdef name="yui-compressor" classname="net.noha.tools.ant.yuicompressor.tasks.YuiCompressorTask">
-		<classpath refid="yui.classpath" />
-	</taskdef>
 
 	<!-- targets -->
-	<target name="concat">
-
-		<echo message="Building ${final_js}" />
-		<concat destfile="${final_js}" force="true" fixlastline="true">
-			<fileset dir="${build.dir}" includes="js/*.js" />
-			<!-- <fileset dir="${build.dir}" includes="**/widgets/*.js" /> -->
-		</concat>
-
-		<echo message="Building ${final_css}" />
-		<concat destfile="${final_css}" force="true" fixlastline="true">
-			<fileset dir="${build.dir}" includes="css/*.css" />
-			<!-- <fileset dir="${build.dir}" includes="**/flexgrid/*.css" /> -->
-		</concat>
-
-	</target>
-
-	<target name="compress">
-
-		<yui-compressor
-			warn="true"
-			munge="true"
-			preserveallsemicolons="false"
-			fromdir="${basedir}/../public"
-			todir="${build.dir}"
-		/>
-
-	</target>
-
-	<target name="clean">
-		<delete dir="${build.dir}"/>
-	</target>
-
-	<target name="start">
-		<echo message="Building ${ant.project.name} with ${ant.version} - System Java ${ant.java.version}" />
-        <echo message="Basedir: ${basedir}" />
-		<mkdir dir="${build.dir}" />
-	</target>
-
-	<target name="main" depends="start,compress,concat,clean" />
-
+	
 </project>
