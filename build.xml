@@ -51,6 +51,26 @@
 	<property environment="env" />
 	<property name="build.dir" value="build" />
 
-	<!-- targets -->
-	
+	<target name="move">
+		<tstamp>
+  		<format property="RELEASE_ID" pattern="yyyymmmmddHHmmsssss" locale="en,UK"/>
+		</tstamp>
+
+		<move todir="/var/www/5recip.es/releses/${RELEASE_ID}">
+  		<fileset dir="www"/>
+		</move>
+	</target>
+
+	<target name="clean">
+		<delete dir="${build.dir}"/>
+	</target>
+
+	<target name="start">
+		<echo message="Building ${ant.project.name} with ${ant.version} - System Java ${ant.java.version}" />
+        <echo message="Basedir: ${basedir}" />
+		<mkdir dir="${build.dir}" />
+	</target>
+
+	<target name="main" depends="start,move,clean" />
+
 </project>
