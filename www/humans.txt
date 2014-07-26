@@ -3,7 +3,7 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Jakub Kułak <jakub.kulak@gmail.com> @jakub_kulak
 
 # THANKS
 
