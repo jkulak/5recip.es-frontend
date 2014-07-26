@@ -51,11 +51,11 @@
 
 	<target name="move">
 		<tstamp>
-  		<format property="RELEASE_ID" pattern="yyyymmmmddHHmmsssss" locale="en,UK"/>
+  		<format property="RELEASE_ID" pattern="yyyymmmmdd-HHmmsssss" locale="en,UK"/>
 		</tstamp>
 
-		<move todir="/var/www/5recip.es/releses/${RELEASE_ID}/www">
-  		<fileset dir="www"/>
+		<move todir="/var/www/5recip.es/www/releases/${RELEASE_ID}">
+  		<fileset dir="."/>
 		</move>
 
 		<symlink link="/var/www/5recip.es/www" resource="/var/www/5recip.es/releses/${RELEASE_ID}/www"/>
