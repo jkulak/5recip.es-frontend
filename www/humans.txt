@@ -3,7 +3,7 @@
 
 # TEAM
 
-    Jakub Kułak
+    Jakub Kułak <jakub.kulak@gmail.com> @jakub_kulak
 
 # THANKS
 
