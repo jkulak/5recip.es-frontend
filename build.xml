@@ -51,14 +51,17 @@
 
 	<target name="move">
 		<tstamp>
-  		<format property="RELEASE_ID" pattern="yyyymmdd-HHmmsssss" locale="en,UK"/>
+  		<format property="RELEASE_ID" pattern="yyyy.mm.dd-HH.mm.ss" locale="en,UK"/>
 		</tstamp>
 
-		<move todir="/var/www/5recip.es/www/releases/${RELEASE_ID}">
+		<copy todir="/var/www/5recip.es/www/releases/${RELEASE_ID}">
   		<fileset dir="."/>
 		</move>
 
+		<echo message="Deleting symlink" />
 		<symlink action="delete" link="/var/www/5recip.es/www/www" />
+
+		<echo message="Creating symlink" />
 		<symlink link="/var/www/5recip.es/www" resource="/var/www/5recip.es/releases/${RELEASE_ID}/www" />
 
 	</target>
