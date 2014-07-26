@@ -45,11 +45,9 @@
 	************************************************************************************** -->
 
 	<!-- to create DSTAMP -->
-	<tstamp/>
 
 	<!-- props -->
 	<property environment="env" />
-	<property name="build.dir" value="build" />
 
 	<target name="move">
 		<tstamp>
@@ -59,16 +57,18 @@
 		<move todir="/var/www/5recip.es/releses/${RELEASE_ID}">
   		<fileset dir="www"/>
 		</move>
+
+		<symlink link="/var/www/5recip.es/www/www" resource="/var/www/5recip.es/releses/${RELEASE_ID}"/>
+
 	</target>
 
 	<target name="clean">
-		<delete dir="${build.dir}"/>
+		<!-- <delete dir="${build.dir}"/> -->
 	</target>
 
 	<target name="start">
 		<echo message="Building ${ant.project.name} with ${ant.version} - System Java ${ant.java.version}" />
-        <echo message="Basedir: ${basedir}" />
-		<mkdir dir="${build.dir}" />
+    <echo message="Basedir: ${basedir}" />
 	</target>
 
 	<target name="main" depends="start,move,clean" />
