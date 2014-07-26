@@ -62,7 +62,7 @@
 		<symlink action="delete" link="/var/www/5recip.es/www/www" />
 
 		<echo message="Creating symlink" />
-		<symlink link="/var/www/5recip.es/www" resource="/var/www/5recip.es/releases/${RELEASE_ID}/www" />
+		<symlink link="/var/www/5recip.es/www" resource="/var/www/5recip.es/www/releases/${RELEASE_ID}/www" />
 
 	</target>
 
