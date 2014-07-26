@@ -58,8 +58,8 @@
   		<fileset dir="."/>
 		</move>
 
-		<delete file="/var/www/5recip.es/www/www" followsymlinks="false" removenotfollowedsymlinks="true" />
-		<symlink link="/var/www/5recip.es/www" resource="/var/www/5recip.es/releases/${RELEASE_ID}/www"/>
+		<symlink action="delete" link="/var/www/5recip.es/www/www" />
+		<symlink link="/var/www/5recip.es/www" resource="/var/www/5recip.es/releases/${RELEASE_ID}/www" />
 
 	</target>
 
