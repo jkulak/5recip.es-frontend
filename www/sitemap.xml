@@ -9,7 +9,7 @@
    <url>
       <loc>http://5recip.es/#!/list</loc>
       <lastmod>2014-07-31</lastmod>
-      <changefreq>daily</changefreq>
+      <changefreq>weekly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
@@ -29,15 +29,6 @@
       <lastmod>2014-07-31</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
-   </url>
-   <url>
-      <loc>http://www.example.com/catalog?item=12&amp;desc=vacation_hawaii</loc>
-      <changefreq>weekly</changefreq>
-   </url>
-   <url>
-      <loc>http://www.example.com/catalog?item=73&amp;desc=vacation_new_zealand</loc>
-      <lastmod>2004-12-23</lastmod>
-      <changefreq>weekly</changefreq>
    </url>
 
    <!-- recipe pages -->
@@ -642,5 +633,5 @@
      <changefreq>monthly</changefreq>
      <priority>0.7</priority>
    </url>
-
+</urlset>
 </xml>
