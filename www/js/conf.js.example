@@ -1,0 +1,7 @@
+// angular.module('recipeApp').constant('WEBASCRAZY_CONFIG', {
+//   apiUrl: 'http://recipes-backend.griller'
+// });
+
+var WEBASCRAZY_CONFIG = {
+    apiUrl: 'http://13.13.13.13'
+    };
