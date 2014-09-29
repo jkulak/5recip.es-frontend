@@ -51,9 +51,9 @@ angular.module('recipeApp', [
                         resolve: {
                             recipe: ['$http', '$stateParams', function($http, $stateParams) {
                                 return $http.get(WEBASCRAZY_CONFIG.apiUrl + '/node/' + $stateParams.recipe + '.json').then(function(response) {
-            
+
                                     return response.data;
-                                    
+
                                 })
                             }]
                         }
@@ -75,7 +75,7 @@ angular.module('recipeApp', [
                 url: '/best',
                 views: {
                     'main': {
-                        templateUrl: 'templates/best.html'        
+                        templateUrl: 'templates/best.html'
                     }
                 }
             })
